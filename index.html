@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Songmaker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <span class="logo">🎵 Songmaker</span>
+      <button id="btn-save" class="btn btn-primary" title="Save (Ctrl+S)">💾 Save</button>
+      <button id="btn-new"  class="btn btn-secondary" title="New song">＋ New Song</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── Song Info ──────────────────────────────────────── -->
+    <section class="card" id="section-info">
+      <h2 class="section-title">Song Info</h2>
+      <div class="info-grid">
+        <label>
+          <span>Title</span>
+          <input type="text" id="song-title" placeholder="Untitled Song" />
+        </label>
+        <label>
+          <span>Artist / Writer</span>
+          <input type="text" id="song-artist" placeholder="Your name" />
+        </label>
+        <label>
+          <span>Key</span>
+          <select id="song-key">
+            <option value="">— select —</option>
+            <option>C</option><option>C#/Db</option>
+            <option>D</option><option>D#/Eb</option>
+            <option>E</option>
+            <option>F</option><option>F#/Gb</option>
+            <option>G</option><option>G#/Ab</option>
+            <option>A</option><option>A#/Bb</option>
+            <option>B</option>
+          </select>
+        </label>
+        <label>
+          <span>Mode</span>
+          <select id="song-mode">
+            <option value="">— select —</option>
+            <option>Major</option>
+            <option>Minor</option>
+          </select>
+        </label>
+        <label>
+          <span>BPM</span>
+          <input type="number" id="song-bpm" min="20" max="300" placeholder="120" />
+        </label>
+        <label>
+          <span>Genre</span>
+          <input type="text" id="song-genre" placeholder="e.g. Pop, Rock, Folk…" />
+        </label>
+      </div>
+    </section>
+
+    <!-- ── Lyrics ─────────────────────────────────────────── -->
+    <section class="card" id="section-lyrics">
+      <div class="section-header">
+        <h2 class="section-title">Lyrics</h2>
+        <div class="section-actions">
+          <button class="btn btn-ghost" id="btn-add-section">＋ Add Section</button>
+          <select id="section-template">
+            <option value="Verse">Verse</option>
+            <option value="Pre-Chorus">Pre-Chorus</option>
+            <option value="Chorus">Chorus</option>
+            <option value="Bridge">Bridge</option>
+            <option value="Outro">Outro</option>
+            <option value="Intro">Intro</option>
+            <option value="Hook">Hook</option>
+          </select>
+        </div>
+      </div>
+      <div id="lyrics-sections"></div>
+    </section>
+
+    <!-- ── Notes ─────────────────────────────────────────── -->
+    <section class="card" id="section-notes">
+      <h2 class="section-title">Notes</h2>
+      <p class="hint">Use this space for ideas, chord progressions, references, or anything else.</p>
+      <textarea
+        id="notes-area"
+        placeholder="Start writing your notes here…"
+        rows="12"
+        spellcheck="true"
+      ></textarea>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
